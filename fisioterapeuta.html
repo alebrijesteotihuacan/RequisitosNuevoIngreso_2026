@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioterapeuta | Alebrijes de Oaxaca</title>
+    <meta name="description" content="Servicio de fisioterapia profesional con atención especializada y aparatos médicos de primer nivel para los jugadores de Fuerzas Básicas de Alebrijes de Oaxaca.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ===== FISIOTERAPEUTA PAGE STYLES ===== */
+        .fisio-section {
+            min-height: auto;
+            padding: 80px 0 60px;
+        }
+
+        /* Logo Header */
+        .fisio-logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 36px;
+        }
+
+        .fisio-logo-box {
+            background: linear-gradient(160deg, rgba(25,25,25,0.95), rgba(10,10,10,0.95));
+            border: 1px solid rgba(255,102,0,0.2);
+            border-radius: 20px;
+            padding: 24px 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .fisio-logo-box img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .fisio-logo-text h2 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .fisio-logo-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* Main Highlight Card */
+        .fisio-highlight {
+            background: linear-gradient(160deg, rgba(35,30,25,0.98), rgba(15,12,10,0.98));
+            border: 1px solid rgba(255,102,0,0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .fisio-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), rgba(255,102,0,0.3), transparent);
+        }
+
+        .fisio-highlight-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: rgba(255,102,0,0.12);
+            border: 2px solid rgba(255,102,0,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .fisio-highlight-text h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .fisio-highlight-text p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        .fisio-highlight-price {
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .price-big {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 6px;
+        }
+
+        /* Features Grid */
+        .fisio-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .fisio-feature-card {
+            background: linear-gradient(160deg, rgba(25,25,25,0.95), rgba(10,10,10,0.95));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 28px 22px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fisio-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .fisio-feature-card:hover::before { opacity: 1; }
+
+        .fisio-feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,102,0,0.25);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+        }
+
+        .fisio-feature-icon {
+            color: var(--primary-color);
+            width: 52px;
+            height: 52px;
+            background: rgba(255,102,0,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .fisio-feature-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .fisio-feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            margin-top: 14px;
+            font-family: var(--font-heading);
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary-color);
+        }
+
+        /* Video Section */
+        .fisio-video-section {
+            margin-bottom: 30px;
+        }
+
+        .fisio-video-section .section-label {
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .fisio-video-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .fisio-video-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            background: #000;
+        }
+
+        .fisio-video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* PDF Button */
+        .pdf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-color);
+            color: #000;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 14px 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .pdf-btn:hover {
+            background: #ff8533;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,102,0,0.4);
+        }
+
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .cta-text {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .fisio-features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .fisio-features-grid { grid-template-columns: 1fr; }
+            .fisio-highlight { flex-direction: column; gap: 24px; padding: 28px 20px; }
+            .fisio-highlight-text h3 { font-size: 1.4rem; }
+            .fisio-logo-box { flex-direction: column; text-align: center; padding: 24px 20px; gap: 14px; }
+            .fisio-logo-box img { height: 60px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="nav-menu">
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="fuerzas-basicas.html" class="nav-link">Estancia y Alojamiento</a>
+            <a href="casos-exito.html" class="nav-link">Casos de Éxito</a>
+            <a href="requisitos.html" class="nav-link">Requisitos</a>
+            <a href="escuela.html" class="nav-link">Escuela</a>
+            <a href="fisioterapeuta.html" class="nav-link active">Fisioterapeuta</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero hero-short">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in-up">
+            <div class="text-container">
+                <img src="assets/img/alebrijes-text.png" alt="Siempre Jugar en Equipo" class="hero-slogan">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <section class="section fisio-section" id="fisioterapeuta">
+
+            <div class="section-header fade-in">
+                <span class="section-subtitle">Bienestar Deportivo</span>
+                <h2 class="section-title">Fisioterapeuta</h2>
+            </div>
+
+            <!-- Logo -->
+            <div class="fisio-logo-wrapper fade-in-up">
+                <div class="fisio-logo-box">
+                    <img src="assets/rc-fisio_logo.jpeg" alt="RC Fisio Logo">
+                    <div class="fisio-logo-text">
+                        <h2>RC Fisioterapia</h2>
+                        <p>Centros de Fisioterapia Profesional · Alebrijes de Oaxaca</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlight -->
+            <div class="fisio-highlight fade-in-up">
+                <div class="fisio-highlight-icon">
+                    <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                </div>
+                <div class="fisio-highlight-text">
+                    <h3>Atención Especializada</h3>
+                    <p>Servicio de fisioterapia profesional con atención personalizada y uso de aparatos médicos de primer nivel. Cubrimos lesiones deportivas, rehabilitación muscular y prevención para los jugadores de Fuerzas Básicas de Alebrijes de Oaxaca.</p>
+                </div>
+                <div class="fisio-highlight-price">
+                    <div class="price-big">$600</div>
+                    <div class="price-period">MXN · Membresía Semestral</div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="fisio-features-grid fade-in-up">
+
+                <div class="fisio-feature-card">
+                    <div class="fisio-feature-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M12 8v8M8 12h8"/>
+                        </svg>
+                    </div>
+                    <h4>Aparatos Médicos</h4>
+                    <p>Equipamiento médico profesional de última generación para diagnóstico y tratamiento de lesiones deportivas.</p>
+                    <span class="feature-tag">Nivel Profesional</span>
+                </div>
+
+                <div class="fisio-feature-card">
+                    <div class="fisio-feature-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                        </svg>
+                    </div>
+                    <h4>Atención Personalizada</h4>
+                    <p>Cada jugador recibe un plan de tratamiento individual adaptado a sus necesidades, historial y objetivos deportivos.</p>
+                    <span class="feature-tag">Individualizado</span>
+                </div>
+
+                <div class="fisio-feature-card">
+                    <div class="fisio-feature-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h4>Rehabilitación Deportiva</h4>
+                    <p>Protocolos de rehabilitación para recuperación post-lesión y acondicionamiento físico, incluyendo uso de alberca.</p>
+                    <span class="feature-tag">Alto Rendimiento</span>
+                </div>
+
+                <div class="fisio-feature-card">
+                    <div class="fisio-feature-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                        </svg>
+                    </div>
+                    <h4>Prevención de Lesiones</h4>
+                    <p>Programas preventivos para reducir el riesgo de lesiones durante los entrenamientos de doble sesión y competencia.</p>
+                    <span class="feature-tag">Preventivo</span>
+                </div>
+
+                <div class="fisio-feature-card">
+                    <div class="fisio-feature-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2"/>
+                            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                        </svg>
+                    </div>
+                    <h4>Membresía Semestral</h4>
+                    <p>Acceso completo a todos los servicios de fisioterapia por solo $600 MXN semestrales. Inversión en tu salud y rendimiento.</p>
+                    <span class="feature-tag">$600 MXN / Semestre</span>
+                </div>
+
+                <div class="fisio-feature-card" style="border-color:rgba(255,102,0,0.15);background:linear-gradient(160deg,rgba(35,30,25,0.95),rgba(15,12,10,0.95));">
+                    <div class="fisio-feature-icon" style="background:rgba(255,102,0,0.15);">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h4>Información Completa</h4>
+                    <p>Descarga la presentación completa de RC Fisioterapia con todos los servicios, tratamientos disponibles y metodología de trabajo.</p>
+                    <a href="assets/Presentación de centros fisioterapia profesional azul.pdf" target="_blank" class="pdf-btn" style="margin-top:14px;font-size:0.78rem;padding:10px 20px;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                        Ver Presentación PDF
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Video -->
+            <div class="fisio-video-section fade-in-up">
+                <span class="section-label">Conoce el Centro</span>
+                <h3>RC Fisioterapia en Acción</h3>
+                <div class="fisio-video-wrapper">
+                    <video controls playsinline preload="metadata">
+                        <source src="assets/rc_fisio_video.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="logos-container fade-in">
+            <img src="assets/img/alebrijes-badge.png" alt="Alebrijes Badge">
+            <img src="assets/img/liga-tdp.png" alt="Liga TDP">
+            <img src="assets/img/fmf.png" alt="FMF">
+            <img src="assets/img/instituto-azteca.png" alt="Instituto Azteca">
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Alebrijes de Oaxaca. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
